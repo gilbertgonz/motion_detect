@@ -48,11 +48,8 @@ void non_max_suppression(std::vector<Box>& boxes, float thresh) {
     for (size_t i = 0; i < boxes.size(); i++) {
         for (size_t j = i + 1; j < boxes.size(); ) {
             float intersection_width = std::max(0, std::min(boxes[i].w + boxes[i].x, boxes[j].w + boxes[j].x) - std::max(boxes[i].x, boxes[j].x));
-            
             float intersection_height = std::max(0, std::min(boxes[i].h + boxes[i].y, boxes[j].w + boxes[j].y) - std::max(boxes[i].y, boxes[j].y));
-            
             float intersection = intersection_width * intersection_height;
-
             float total_union = (boxes[i].area + boxes[j].area) - intersection;
 
             float iou = 0.0f;
