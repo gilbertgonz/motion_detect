@@ -1,6 +1,6 @@
 # Simple motion detection
-Detecting moving objects using frame subtraction. It computes differences between consecutive frames. For noise reduction, two methods were used:
-- Non-maximal suppression to filter overlapping bounding boxes
+Detecting moving objects by computing differences between consecutive frames. For noise reduction, two methods were used:
+- Non-maximal suppression to filter out overlapping bounding boxes
 - Dilation for filling in gaps and connecting nearby contours
 
 Some results:
